@@ -1,0 +1,107 @@
+header {
+    @media (min-width: 922px) {
+        background-image: linear-gradient(to right, $blue,$l-blue);
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1111;
+    padding: 16px 0;
+    height: 68px;
+    background-color: $d-color;
+    .container {
+        gap: 20px;
+        .logo {
+            i {
+                font-size: 25px;
+                color: $white;
+            }
+            span {
+                font-size: 30px;
+                font-weight: 500;
+                color: $white;
+            }
+        }
+        nav {
+            @media (min-width: 922px) {
+                display: block !important;
+                margin-left: auto;
+                ul {
+                    align-items: center;
+                    gap: 15px !important;
+                    li {
+                        a {
+                            width: fit-content !important;
+                        }
+                    }
+                }
+            }
+            @media (max-width: 921px) {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: calc(100vh - 68px);
+                background-color: $d-color;
+                padding: 20px 40px !important;
+                ul {
+                    flex-direction: column;
+                }
+            }
+            @media (max-width: 921px) {
+                padding: 20px 25px;
+            }
+            ul {
+                display: flex;
+                gap: 20px;
+                li {
+                    a {
+                        position: relative;
+                        width: 100%;
+                        display: block;
+                        color: $white;
+                        text-transform: capitalize;
+                        font-size: 16px;
+                        font-weight: 400;
+                        &::before {
+                            content: "";
+                            width: 0;
+                            height: 2px;
+                            background-color: $white;
+                            transition: .3s;
+                            position: absolute;
+                            left: 0;
+                            top: calc(100% + 5px);
+                        }
+                        &:hover, &.active {
+                            &::before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .join-now {
+            @media (max-width: 921px) {
+                display: none !important;
+            }
+            padding: 3px 6px;
+            font-size: 14px;
+            color: $d-color;
+            text-transform: capitalize;
+        }
+        .open-nav {
+            @media (min-width: 922px) {
+                display: none !important;
+            }
+            cursor: pointer;
+            i {
+                font-size: 25px;
+                color: $white;
+            }
+        }
+    }
+}
